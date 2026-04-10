@@ -135,6 +135,23 @@
             </div>
             
             <div class="form-group">
+                <label for="dept">직급</label>
+                <select id="dept" name="dept">
+                    <option value="인턴">인턴</option>
+                    <option value="사원">사원</option>
+                    <option value="주임">주임</option>
+                    <option value="대리">대리</option>
+                    <option value="과장">과장</option>
+                    <option value="차장">차장</option>
+                    <option value="부장">부장</option>
+                    <option value="이사">이사</option>
+                    <option value="상무">상무</option>
+                    <option value="전무">전무</option>
+                    <option value="사장">사장</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
                 <label for="age">나이</label>
                 <input type="number" id="age" name="age" placeholder="나이를 입력하세요" required>
             </div>
@@ -142,10 +159,12 @@
             <div class="form-group">
                 <label for="dept">부서</label>
                 <select id="dept" name="dept">
-                    <option value="IT">IT지원팀</option>
+                    <option value="개발자">개발자팀</option>
                     <option value="영업">영업팀</option>
                     <option value="인사">인사팀</option>
                     <option value="기획">기획팀</option>
+                    <option value="마게팅">마게팅팀</option>
+                    <option value="PM">PM팀</option>
                 </select>
             </div>
             

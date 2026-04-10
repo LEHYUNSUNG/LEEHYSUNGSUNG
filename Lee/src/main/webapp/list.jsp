@@ -131,6 +131,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>직급</th>
                     <th>이름</th>
                     <th>나이</th>
                     <th>부서</th>

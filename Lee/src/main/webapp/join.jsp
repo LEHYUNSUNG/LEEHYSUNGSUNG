@@ -16,7 +16,6 @@
     .btn-side { width: 110px; background-color: #636e72; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: bold; }
     .btn-side:hover { background-color: #2d3436; }
 
-    /* 인증 섹션 스타일 */
     #auth-section { display: none; margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-radius: 5px; border: 1px dashed #adb5bd; }
 
     .btn-join { width: 100%; padding: 15px; background: #0984e3; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 16px; margin-top: 20px; }
@@ -24,30 +23,43 @@
 </style>
 
 <script>
-    // 1. 아이디 중복 체크 팝업 함수
     function openIdCheck() {
         const userid = document.getElementsByName("userid")[0].value;
         if (userid === "") {
             alert("확인할 아이디를 먼저 입력해주세요!");
             return;
         }
-        // 팝업창 띄우기 (check_id.jsp가 미리 만들어져 있어야 합니다!)
         const url = "check_id.jsp?userid=" + userid;
         window.open(url, "chkid", "width=400, height=300, menubar=no, toolbar=no");
     }
 
-    // 2. 전화번호 인증 요청 함수
+    function validateForm() {
+        const pw = document.getElementById("userpw").value;
+        const pwConfirm = document.getElementById("userpw_confirm").value;
+        
+        // 대문자, 특수문자 포함 정규식 (8자 이상)
+        const pwRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[0-9]).{8,}$/;
+
+        if (!pwRegex.test(pw)) {
+            alert("비밀번호 규칙을 확인해주세요.\n(8자 이상, 대문자 및 특수문자 포함)");
+            return false;
+        }
+
+        if (pw !== pwConfirm) {
+            alert("비밀번호가 일치하지 않습니다.");
+            return false;
+        }
+        
+        return true; 
+    }
+
     function requestAuth() {
         const phone = document.getElementById("phone_input").value;
-        if(phone === "") {
-            alert("전화번호를 입력해주세요!");
-            return;
-        }
+        if(phone === "") { alert("전화번호를 입력해주세요!"); return; }
         alert(phone + " 번호로 인증번호가 발송되었습니다! (테스트 번호: 1234)");
         document.getElementById("auth-section").style.display = "block";
     }
 
-    // 3. 인증번호 확인 함수
     function checkAuth() {
         const authNum = document.getElementById("auth_num").value;
         if(authNum === "1234") {
@@ -58,7 +70,7 @@
             document.getElementById("auth_btn").disabled = true;
             document.getElementById("auth_btn").style.background = "#00b894";
         } else {
-            alert("인증번호가 틀렸습니다. 다시 확인해주세요.");
+            alert("인증번호가 틀렸습니다.");
         }
     }
 </script>
@@ -66,7 +78,7 @@
 <body>
     <div class="join-container">
         <h2>회원가입</h2>
-        <form action="join_db.jsp" method="post">
+        <form action="join_db.jsp" method="post" onsubmit="return validateForm()">
             
             <label>아이디</label>
             <div class="input-group">
@@ -75,7 +87,11 @@
             </div>
             
             <label>비밀번호</label>
-            <input type="password" name="userpw" placeholder="비밀번호" required>
+            <input type="password" id="userpw" name="userpw" 
+                   placeholder="8자 이상, 대문자 및 특수문자 포함" required>
+            
+            <label>비밀번호 확인</label>
+            <input type="password" id="userpw_confirm" placeholder="비밀번호 재입력" required>
             
             <label>이름</label>
             <input type="text" name="username" placeholder="성함 입력" required>
