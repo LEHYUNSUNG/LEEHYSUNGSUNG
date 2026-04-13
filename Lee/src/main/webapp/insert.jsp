@@ -135,8 +135,13 @@
             </div>
             
             <div class="form-group">
-                <label for="dept">직급</label>
-                <select id="dept" name="dept">
+                   <label>직급</label>
+                   <input type="text" name="position" placeholder="대리" required> 
+            </div>
+
+             <div class="form-group">
+                   <label>직급</label>
+             <select name="position" required> 
                     <option value="인턴">인턴</option>
                     <option value="사원">사원</option>
                     <option value="주임">주임</option>
@@ -148,8 +153,8 @@
                     <option value="상무">상무</option>
                     <option value="전무">전무</option>
                     <option value="사장">사장</option>
-                </select>
-            </div>
+             </select>
+             </div>
             
             <div class="form-group">
                 <label for="age">나이</label>
