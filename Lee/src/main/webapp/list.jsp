@@ -17,7 +17,7 @@
         --primary-blue: #0062ff;
         --bg-gray: #f8f9fc;
         --sidebar-width: 260px;
-        --border-color: #e3e6f0;
+        --border-color: #ebedf3;
     }
 
     body { margin: 0; font-family: 'Noto Sans KR', sans-serif; background-color: var(--bg-gray); display: flex; overflow-x: hidden; }
@@ -26,60 +26,54 @@
     .sidebar { width: var(--sidebar-width); height: 100vh; background-color: #fff; border-right: 1px solid var(--border-color); position: fixed; display: flex; flex-direction: column; overflow-y: auto; z-index: 1000; }
     .sidebar-logo { padding: 30px 25px; }
     .logo-text { font-size: 24px; font-weight: 900; color: var(--primary-blue); letter-spacing: -1px; }
-    
     .sidebar-btn-area { padding: 0 20px 25px; }
-    .btn-start { width: 100%; padding: 14px; background-color: var(--primary-blue); color: #fff; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 10px rgba(0, 98, 255, 0.2); }
-    .btn-start:hover { background-color: #0052d4; transform: translateY(-2px); }
-    
-    .contract-count { margin-top: 12px; font-size: 13px; color: #858796; text-align: center; }
-    .count-num { color: var(--primary-blue); font-weight: 700; }
-    
+    .btn-start { width: 100%; padding: 14px; background-color: var(--primary-blue); color: #fff; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
     .sidebar-menu { list-style: none; padding: 10px 0; margin: 0; flex-grow: 1; }
-    .menu-item { padding: 14px 25px; display: flex; align-items: center; cursor: pointer; color: #6e707e; text-decoration: none; font-size: 15px; transition: 0.2s; font-weight: 500; position: relative; }
-    .menu-item:hover { background-color: #f8f9fc; color: var(--primary-blue); }
-    .menu-item.active { background-color: #f0f7ff; color: var(--primary-blue); font-weight: 700; }
+    .menu-item { padding: 14px 25px; display: flex; align-items: center; cursor: pointer; color: #64748b; text-decoration: none; font-size: 15px; transition: 0.2s; font-weight: 500; position: relative; }
+    .menu-item.active { background-color: #f0f4ff; color: var(--primary-blue); font-weight: 700; }
     .menu-item.active::after { content: ''; position: absolute; right: 0; width: 4px; height: 100%; background: var(--primary-blue); }
-    .menu-icon { width: 25px; margin-right: 12px; font-size: 17px; text-align: center; opacity: 0.8; }
+    .menu-icon { width: 25px; margin-right: 12px; font-size: 17px; text-align: center; }
     
-    .has-sub::after { content: '\f107'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; right: 25px; font-size: 12px; transition: 0.3s; color: #d1d3e2; }
-    .has-sub.open::after { transform: rotate(180deg); }
-    .submenu { list-style: none; padding: 5px 0; background-color: #fafafa; display: none; }
-    .submenu li a { padding: 10px 20px 10px 62px; display: block; color: #858796; text-decoration: none; font-size: 14px; transition: 0.2s; font-weight: 500; }
-    .submenu li a:hover { color: var(--primary-blue); }
+    .submenu { list-style: none; display: none; background: #fcfdfe; }
+    .submenu li a { padding: 10px 20px 10px 62px; display: block; color: #858796; text-decoration: none; font-size: 14px; }
 
     /* 메인 콘텐츠 영역 */
     .main-content { margin-left: var(--sidebar-width); flex-grow: 1; padding: 40px; }
-    .dashboard-card { background-color: #fff; border-radius: 12px; border: 1px solid var(--border-color); padding: 30px; margin-bottom: 30px; box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.05); }
-    .card-title { font-size: 18px; font-weight: 800; color: #2e2f37; margin-bottom: 25px; display: flex; align-items: center; justify-content: space-between; }
-    .title-sub { font-size: 12px; color: #b7b9cc; font-weight: 400; }
+    .dashboard-card { background-color: #fff; border-radius: 12px; border: 1px solid var(--border-color); padding: 25px 30px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); }
+    .card-title { font-size: 17px; font-weight: 700; color: #2e2f37; margin-bottom: 25px; display: flex; align-items: center; gap: 8px; }
+    .title-sub { font-size: 12px; color: #94a3b8; font-weight: 400; }
 
     /* 자주 쓰는 기능 */
-    .quick-list { display: flex; gap: 25px; }
-    .quick-item { flex: 1; text-align: center; text-decoration: none; color: #4e4e4e; transition: 0.3s; padding: 25px; border-radius: 12px; background: #f8f9fc; border: 1px solid transparent; }
-    .quick-item:hover { background-color: #fff; border-color: var(--primary-blue); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .quick-icon-box { font-size: 40px; color: var(--primary-blue); margin-bottom: 15px; }
-    .quick-text { font-size: 16px; font-weight: 700; }
+    .quick-list { display: flex; gap: 20px; }
+    .quick-item { flex: 1; text-align: center; text-decoration: none; color: #333; transition: 0.2s; padding: 25px; border-radius: 12px; background: #fff; border: 1px solid var(--border-color); }
+    .quick-item:hover { border-color: var(--primary-blue); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 98, 255, 0.1); }
+    .quick-icon-box { font-size: 44px; color: var(--primary-blue); margin-bottom: 15px; }
+    .quick-text { font-size: 15px; font-weight: 700; }
 
     /* 계약현황 스타일 */
-    .status-list { display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #f1f3f9; padding-top: 35px; }
-    .status-item { text-align: center; flex: 1; }
-    .status-label { font-size: 14px; font-weight: 700; color: #858796; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-    .status-count { font-size: 32px; font-weight: 900; color: #2e2f37; }
+    .status-container { display: flex; gap: 15px; margin-top: 5px; }
+    .status-box { flex: 1; background: #fff; border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; cursor: pointer; transition: 0.2s; position: relative; }
+    .status-box:hover { border-color: var(--primary-blue); background: #f0f7ff; }
+    
+    .status-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
+    .status-label-group { display: flex; align-items: center; gap: 8px; }
+    .status-icon { font-size: 14px; }
+    .status-label { font-size: 14px; font-weight: 700; color: #64748b; }
+    .status-arrow { font-size: 12px; color: #cbd5e1; }
+    
+    .status-value { font-size: 32px; font-weight: 900; color: #1e293b; text-align: left; }
+    .status-unit { font-size: 15px; font-weight: 500; color: #94a3b8; margin-left: 4px; }
+
+    .color-draft { color: #f59e0b; }
+    .color-ing { color: #3b82f6; }
+    .color-complete { color: #10b981; }
+    .color-reject { color: #ef4444; }
 
     /* 하단 레이아웃 */
     .bottom-row { display: flex; gap: 30px; }
     .billing-card { flex: 2; }
     .support-card { flex: 1; }
-    .billing-content { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 0; border-top: 1px solid #f1f3f9; }
-    .btn-pay { padding: 12px 30px; background-color: #f0f3ff; color: var(--primary-blue); border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s; }
-    .btn-pay:hover { background-color: var(--primary-blue); color: #fff; }
-
-    .sidebar-footer { padding: 25px; border-top: 1px solid #f1f3f9; background: #fff; }
-    .user-info { font-size: 14px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-    .footer-links { display: flex; gap: 15px; }
-    .footer-link { font-size: 13px; color: #b7b9cc; text-decoration: none; transition: 0.2s; }
-    .footer-link:hover { color: #e74a3b; }
+    .btn-pay { padding: 12px 30px; background-color: #f0f3ff; color: var(--primary-blue); border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -88,87 +82,99 @@
         <div class="sidebar-logo"><div class="logo-text">ERP SYSTEM</div></div>
         <div class="sidebar-btn-area">
             <button class="btn-start" onclick="location.href='insert.jsp'"><i class="fa-solid fa-file-signature"></i> 계약 시작하기</button>
-            <div class="contract-count">남은 계약건수 <span class="count-num" id="totalCount">0</span>건</div>
         </div>
         <nav class="sidebar-menu">
-            <a href="main.jsp" class="menu-item active"><i class="fa-solid fa-house menu-icon"></i> 홈</a>
-            
-            <div class="menu-item has-sub" onclick="toggleSub(this)"><i class="fa-solid fa-folder-open menu-icon"></i> 문서함</div>
+            <a href="list.jsp" class="menu-item active"><i class="fa-solid fa-house menu-icon"></i> 홈</a>
+            <div class="menu-item" onclick="toggleSub(this)"><i class="fa-solid fa-folder-open menu-icon"></i> 문서함</div>
             <ul class="submenu">
                 <li><a href="my_documents.jsp">내 문서함</a></li>
                 <li><a href="external_documents.jsp">외부계약서</a></li>
                 <li><a href="trash_bin.jsp">휴지통</a></li>
             </ul>
-
             <a href="bulk_send.jsp" class="menu-item"><i class="fa-solid fa-envelopes-bulk menu-icon"></i> 대량발송</a>
-            
             <a href="link_signature.jsp" class="menu-item"><i class="fa-solid fa-link menu-icon"></i> 링크서명</a>
-            <a href="#" class="menu-item"><i class="fa-solid fa-scroll menu-icon"></i> 공문발송</a>
+            <a href="official_letter_list.jsp" class="menu-item"><i class="fa-solid fa-scroll menu-icon"></i> 공문발송</a>
             
-            <div class="menu-item has-sub" onclick="toggleSub(this)"><i class="fa-solid fa-file-lines menu-icon"></i> 템플릿 관리</div>
+            <!-- 사이드바 템플릿 관리 메뉴 -->
+            <div class="menu-item" onclick="toggleSub(this)"><i class="fa-regular fa-copy menu-icon"></i> 템플릿 관리 <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: auto;"></i></div>
             <ul class="submenu">
-                <li><a href="#">내 템플릿</a></li>
-                <li><a href="#">서식자료실</a></li>
+                <li><a href="my_templates.jsp">내 템플릿</a></li>
+                <li><a href="template_library.jsp">서식자료실</a></li>
+                <li><a href="template_management.jsp">서식관리</a></li>
             </ul>
-            
-            <div class="menu-item has-sub" onclick="toggleSub(this)"><i class="fa-solid fa-users menu-icon"></i> 사원 명부</div>
-            <ul class="submenu">
-                <li><a href="total_list.jsp">전체 사원 명부</a></li> 
-                <li><a href="insert.jsp">사원 등록</a></li>
-                <li><a href="salary_list.jsp">급여 관리</a></li>
-            </ul>
-            <a href="#" class="menu-item"><i class="fa-solid fa-gear menu-icon"></i> 설정</a>
+
+            <a href="#" class="menu-item"><i class="fa-solid fa-stamp menu-icon"></i> 사인/도장</a>            
+            <div class="menu-item" onclick="toggleSub(this)"><i class="fa-solid fa-gear menu-icon"></i> 설정 <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: auto;"></i></div>
         </nav>
-        
-        <div class="sidebar-footer">
-            <div class="user-info">
-                <i class="fa-solid fa-circle-user" style="color: #d1d3e2; font-size: 18px;"></i>
-                <span><%= userName %>님</span>
-            </div>
-            <div class="footer-links">
-                <a href="logout.jsp" class="footer-link">로그아웃</a>
-                <a href="withdraw_db.jsp" class="footer-link" onclick="return confirm('탈퇴하시겠습니까?')">회원탈퇴</a>
-            </div>
-        </div>
     </div>
 
     <div class="main-content">
+        <!-- 자주 쓰는 기능 카드 -->
         <div class="dashboard-card">
             <div class="card-title">자주 쓰는 기능</div>
             <div class="quick-list">
                 <a href="insert.jsp" class="quick-item">
-                    <div class="quick-icon-box"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="quick-icon-box"><i class="fa-solid fa-file-signature"></i></div>
                     <span class="quick-text">계약 시작하기</span>
                 </a>
                 <a href="my_documents.jsp" class="quick-item">
-                    <div class="quick-icon-box"><i class="fa-solid fa-box-archive"></i></div>
+                    <div class="quick-icon-box"><i class="fa-solid fa-folder-tree"></i></div>
                     <span class="quick-text">내 문서함</span>
                 </a>
-                <a href="bulk_send.jsp" class="quick-item">
-                    <div class="quick-icon-box"><i class="fa-solid fa-envelope-open-text"></i></div>
-                    <span class="quick-text">대량발송</span>
+                <!-- 수정됨: 내 템플릿 링크 연결 -->
+                <a href="my_templates.jsp" class="quick-item">
+                    <div class="quick-icon-box"><i class="fa-regular fa-copy"></i></div>
+                    <span class="quick-text">내 템플릿</span>
                 </a>
             </div>
         </div>
 
+        <!-- 계약현황 카드 -->
         <div class="dashboard-card">
             <div class="card-title">계약현황 <span class="title-sub">(최근 1개월 기준)</span></div>
-            <div class="status-list">
-                <div class="status-item">
-                    <span class="status-label"><span class="status-dot" style="background:#ff4d4f;"></span>작성중 ></span>
-                    <div class="status-count">0</div>
+            <div class="status-container">
+                <div class="status-box" onclick="location.href='my_documents.jsp?status=draft'">
+                    <div class="status-header">
+                        <div class="status-label-group">
+                            <i class="fa-solid fa-pen-to-square status-icon color-draft"></i>
+                            <span class="status-label">작성중</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right status-arrow"></i>
+                    </div>
+                    <div class="status-value">0<span class="status-unit">건</span></div>
                 </div>
-                <div class="status-item">
-                    <span class="status-label"><span class="status-dot" style="background:#1890ff;"></span>진행중 ></span>
-                    <div class="status-count">0</div>
+
+                <div class="status-box" onclick="location.href='my_documents.jsp?status=ing'">
+                    <div class="status-header">
+                        <div class="status-label-group">
+                            <i class="fa-solid fa-clock-rotate-left status-icon color-ing"></i>
+                            <span class="status-label">진행중</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right status-arrow"></i>
+                    </div>
+                    <div class="status-value">0<span class="status-unit">건</span></div>
                 </div>
-                <div class="status-item">
-                    <span class="status-label"><span class="status-dot" style="background:#52c41a;"></span>완료 ></span>
-                    <div class="status-count">0</div>
+
+                <div class="status-box" onclick="location.href='my_documents.jsp?status=complete'">
+                    <div class="status-header">
+                        <div class="status-label-group">
+                            <i class="fa-solid fa-circle-check status-icon color-complete"></i>
+                            <span class="status-label">완료</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right status-arrow"></i>
+                    </div>
+                    <div class="status-value">0<span class="status-unit">건</span></div>
                 </div>
-                <div class="status-item">
-                    <span class="status-label"><span class="status-dot" style="background:#bfbfbf;"></span>서명거부 ></span>
-                    <div class="status-count">0</div>
+
+                <div class="status-box" onclick="location.href='my_documents.jsp?status=reject'">
+                    <div class="status-header">
+                        <div class="status-label-group">
+                            <i class="fa-solid fa-circle-xmark status-icon color-reject"></i>
+                            <span class="status-label">서명거부</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right status-arrow"></i>
+                    </div>
+                    <div class="status-value">0<span class="status-unit">건</span></div>
                 </div>
             </div>
         </div>
@@ -176,32 +182,25 @@
         <div class="bottom-row">
             <div class="dashboard-card billing-card">
                 <div class="card-title">요금제 정보</div>
-                <div class="billing-content">
-                    <p style="color: #b7b9cc; font-size: 14px; margin-bottom: 20px;">이용 중인 요금제가 없습니다.</p>
+                <div style="display: flex; flex-direction: column; align-items: center; padding: 20px 0;">
+                    <p style="color: #94a3b8; font-size: 14px; margin-bottom: 20px;">이용 중인 요금제가 없습니다.</p>
                     <button class="btn-pay">결제하기</button>
                 </div>
             </div>
 
             <div class="dashboard-card support-card">
                 <div class="card-title">고객센터</div>
-                <div style="font-size: 26px; font-weight: 900; color: #2e2f37; margin-bottom: 10px;">1234-5678</div>
-                <p style="font-size: 12px; color: #858796; margin-bottom: 20px;">평일 09:30 - 18:30 (주말 휴무)</p>
-                <div style="display:flex; gap:10px;">
-                    <button class="btn-pay" style="flex:1; background:#f8f9fc; color:#4e4e4e;">이용가이드 ></button>
-                </div>
+                <div style="font-size: 24px; font-weight: 800; color: #1e293b; margin-bottom: 5px;">1234-5678</div>
+                <button class="btn-pay" style="width:100%; background:#f8f9fc; color:#4e4e4e;">이용가이드 보러가기</button>
             </div>
         </div>
     </div>
 
     <script>
-        // 사이드바 서브메뉴 토글 로직
         function toggleSub(obj) {
-            obj.classList.toggle('open');
             var submenu = obj.nextElementSibling;
-            if (submenu.style.display === 'block') { 
-                submenu.style.display = 'none'; 
-            } else { 
-                submenu.style.display = 'block'; 
+            if (submenu && submenu.classList.contains('submenu')) {
+                submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
             }
         }
     </script>

@@ -94,7 +94,7 @@
             <a href="my_documents.jsp"><div class="nav-item"><i class="fa-solid fa-file-lines"></i> 내 문서함</div></a>
             <a href="extemal_documents.jsp"><div class="nav-item"><i class="fa-solid fa-earth-americas"></i> 외부계약서</div></a>
             <a href="bulk_send.jsp"><div class="nav-item"><i class="fa-solid fa-layer-group"></i> 대량발송</div></a>
-            <a href="link_signature.jsp"><div class="nav-item active"><i class="fa-solid fa-link"></i> 링크서명</div></a>
+            <a href="link_signature.jsp"><div class="nav-item active"><i class="fa-solid fa-link"></i> 링크서명</div></a>            
             <a href="trash_bin.jsp"><div class="nav-item"><i class="fa-solid fa-trash-can"></i> 휴지통</div></a>
             <div style="margin: 20px 25px 10px; font-size: 11px; font-weight: 700; color: #b7b9cc; text-transform: uppercase;">Management</div>
             <div class="nav-item"><i class="fa-solid fa-user-gear"></i> 사원 명부</div>
